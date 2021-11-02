@@ -1,0 +1,20 @@
+/* Used colors */
+
+:root {
+    --pink-lace: #FFCFFAff;
+    --pink-lavender: #D8B6E3ff;
+    --light-grey: #f1eaf0;
+    --white: #ffffff;
+    --violet-ryb: #861DA6ff;
+    --deep-pink: #F32595ff;
+    --purple-plum: #A84AC8ff;
+}
+
+body {
+    background: var(--violet-ryb) url("./bg.png") fixed cover;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+h1 {
+    color: aqua;
+}
