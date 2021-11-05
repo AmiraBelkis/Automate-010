@@ -10,3 +10,37 @@ function Start() {
         main.classList.add('show');
     }, 500);
 }
+//------Automate code
+const automate = [
+    { Si: 'PP', Li: '0', Sj: "PI" },
+    { Si: 'PP', Li: '1', Sj: "IP" },
+    { Si: 'PI', Li: '0', Sj: "IP" },
+    { Si: 'PI', Li: '1', Sj: "II" },
+    { Si: 'II', Li: '0', Sj: "IP" },
+    { Si: 'II', Li: '1', Sj: "PI" },
+    { Si: 'IP', Li: '0', Sj: "II" },
+    { Si: 'IP', Li: '1', Sj: "PP" }
+];
+
+function ReadWord(mot) {
+    let word = mot.split('');
+    let Si = 'PP';
+    for (let index = 0; index < word.length; index++) {
+        const li = word[index];
+        console.log("Si :" + Si);
+        console.log("li :" + li);
+        for (let j = 0; j < automate.length; j++) {
+            const element = automate[j];
+            if ((element.Si === Si) && (element.Li === li)) {
+                Si = element.Sj;
+                console.log("Sj :" + Si);
+                console.log("----------");
+                break;
+            }
+        }
+    }
+    if (Si === 'IP')
+        return true;
+    else
+        return false;
+}
