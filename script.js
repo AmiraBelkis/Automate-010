@@ -3,8 +3,10 @@ function Start() {
         start = document.getElementById('start'),
         title = document.getElementById('title'),
         subtitle = document.getElementById('subTitle');
-    main.style.display = 'flex';
-    start.style.left = '120%';
-    subtitle.style.left = '120%';
-    title.style.left = '33%';
+    start.classList.add('moved');
+    subtitle.classList.add("moved");
+    title.classList.add('centred');
+    setTimeout(() => {
+        main.classList.add('show');
+    }, 500);
 }

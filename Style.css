@@ -1,10 +1,10 @@
-/* Used colors */
-
 :root {
+    /* Used colors */
     --pink-lace: #FFCFFAff;
     --pink-lavender: #D8B6E3ff;
     --light-grey: #f1eaf0;
     --white: #ffffff;
+    /*--------*/
     --violet-ryb: #861DA6ff;
     --deep-pink: #F32595ff;
     --purple-plum: #A84AC8ff;
@@ -14,6 +14,10 @@ body {
     background: url('./cold\ bg.png') fixed;
     background-size: 100% 100%;
     font-family: Arial, Helvetica, sans-serif;
+}
+
+* {
+    transition: all .5s ease-in-out;
 }
 
 .container {
@@ -37,6 +41,11 @@ h1 {
     font-weight: bold;
     font-size: 50px;
     margin-bottom: 0;
+    transition: all 5.8s ease-in-out !important;
+}
+
+.centred {
+    left: 33%;
 }
 
 h6 {
@@ -49,6 +58,8 @@ h6 {
 
 .startBtn {
     position: relative;
+    top: 0;
+    left: 0;
     width: 250px;
     color: var(--pink-lace);
     font-size: 40px;
@@ -68,13 +79,22 @@ h6 {
     background: rgba(255, 207, 250, 0.255);
 }
 
+.moved {
+    left: 120% !important;
+}
+
 .main {
     width: 70%;
     margin: auto;
     border-radius: 50px;
     background: rgba(216, 182, 227, 0.527);
     padding: 5% 3%;
-    display: flex;
+    display: none;
+    transition: all .8s ease-in !important;
+}
+
+.show {
+    display: flex !important;
     flex-direction: column;
     align-items: center;
     position: relative;
