@@ -10,6 +10,14 @@ function Start() {
         main.classList.add('show');
     }, 500);
 }
+let item = document.getElementById("word");
+item.addEventListener('keypress', function(event) {
+    if (event.keyCode === 13) {
+        let result = ReadWord(item.value);
+        if (result) alert(item.value + " appartient à la langage de cette automate");
+        else alert(item.value + " n'appartient pas à la langage de cette automate");
+    }
+});
 //------Automate code
 const automate = [
     { Si: 'PP', Li: '0', Sj: "PI" },
@@ -27,14 +35,14 @@ function ReadWord(mot) {
     let Si = 'PP';
     for (let index = 0; index < word.length; index++) {
         const li = word[index];
-        console.log("Si :" + Si);
-        console.log("li :" + li);
+        // console.log("Si :" + Si);
+        // console.log("li :" + li);
         for (let j = 0; j < automate.length; j++) {
             const element = automate[j];
             if ((element.Si === Si) && (element.Li === li)) {
                 Si = element.Sj;
-                console.log("Sj :" + Si);
-                console.log("----------");
+                // console.log("Sj :" + Si);
+                // console.log("----------");
                 break;
             }
         }
